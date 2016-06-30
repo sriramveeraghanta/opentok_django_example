@@ -11,7 +11,9 @@ session.on({
   	sessionConnected: function(event) {
 		// Publish the publisher we initialzed earlier (this will trigger 'streamCreated' on other
 		// clients)
-		session.publish(publisher);
+		session.publish(publisher, function(){
+			screenshare();
+		});
 	},
 
   // This function runs when another client publishes a stream (eg. session.publish())
@@ -30,28 +32,8 @@ session.on({
 });
 
 
-/*
-
-session.signal(
-{
-	data:"hello"
-},
-function(error) {
-	if (error) {
-		console.log("signal error ("+ error.code + "): " + error.message);
-	} else {
-		console.log("signal sent.");
-	}
-}
-);
-
-session.on("signal", function(event) {
-	console.log("Signal sent from connection " + event.from.id);
-	  // Process the event.data property, if there is any data.
-  });
-
-*/
 
 
-// Connect to the Session using the 'apiKey' of the application and a 'token' for permission
-session.connect(apiKey, token);
+
+
+

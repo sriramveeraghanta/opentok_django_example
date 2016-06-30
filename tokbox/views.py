@@ -2,14 +2,18 @@ from django.shortcuts import render
 
 from opentok import OpenTok
 
-opentok = OpenTok('45599482', 'ffede0e7ae95c1f8ae85cd154e9a5316a3ea2f92')
+APIKey = '45615332'
+secretkey = '67beb3b3f754ff681189f40258d81352ed8b1f10'
+opentok = OpenTok(APIKey, secretkey)
 session = opentok.create_session()
 
-# Create your views here.
 
-def hello(request):
-	key = '45599482'
-	session_id = session.session_id
-	token = opentok.generate_token(session_id)
-	return render(request, 'hello.html' , { 'apikey' : key , 'session_id' :session_id , 'token' :token })
-
+def session_view(request):
+    session_id = session.session_id
+    token = opentok.generate_token(session_id)
+    context = {
+        'apikey': APIKey,
+        'session_id': session_id,
+        'token': token,
+    }
+    return render(request, 'sessionScreen.html', context)

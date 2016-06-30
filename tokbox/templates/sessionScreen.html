@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>OpenTok</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>    
+
+<div class="container">
+	<h1>Session is Running</h1>
+
+    <div id="publisher"></div>
+
+    <div id="subscribers"></div>
+	
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//static.opentok.com/webrtc/v2.2/js/TB.min.js"></script>
+<script type="text/javascript">
+    var apiKey = '{{ apikey }}';
+    var sessionId = '{{ session_id }}';
+    var token = '{{ token }}';
+</script>
+<script src="static/js/mopentok.js"></script>
+</body>
+</html>
