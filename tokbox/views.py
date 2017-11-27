@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 from opentok import OpenTok
 
-APIKey = '45615332'
-secretkey = '67beb3b3f754ff681189f40258d81352ed8b1f10'
+APIKey = 'API_KEY'
+secretkey = 'SECRET_KEY'
 opentok = OpenTok(APIKey, secretkey)
 session = opentok.create_session()
 
